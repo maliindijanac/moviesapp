@@ -1,0 +1,45 @@
+<div class="modal-header">
+        <h3 class="modal-title">Edit movie</h3>
+    </div>
+    <div class="modal-body">
+            
+        
+            <form>
+                 
+                <div class="form-group">
+                  <label for="id">movie id:</label>
+                  <input type="text" class="form-control" id="id" placeholder="Enter id" name="id" ng-model="$ctrl.id">
+                </div>
+                <div class="form-group">
+                        <label for="name">movie name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" ng-model="$ctrl.name">
+                      </div>
+                      <div class="form-group">
+                            <label for="year">year:</label>
+                            <input type="text" class="form-control" id="year" placeholder="Enter nyear" name="year" ng-model="$ctrl.year">
+                          </div>
+                      
+                              <div class="form-group">
+                                    <label for="amount_earned">Amount earned:</label>
+                                    <input type="text" class="form-control" id="amount_earned" placeholder="Enter amount" name="amount_earned" ng-model="$ctrl.amount_earned">
+                                  </div>
+
+
+                                  <div class="form-group">
+                                    <label for="category">Movie Category:</label>
+                                  <select class="form-control" ng-model="$ctrl.category_id" id="category">
+                                    <option ng-repeat="x in $ctrl.categories" value="{{x.id}}">{{x.name}}</option>
+                                  </select>
+                                </div>
+
+                          
+
+                                     
+
+
+              </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-danger" ng-click  = "$ctrl.ok()">Save</button>
+        <button class="btn btn-warning" ng-click = "$ctrl.cancel()">Cancel</button>
+    </div>

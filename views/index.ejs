@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <script src="angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
+
+      <script src="./appctrl.js"></script>
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div ng-app="movies" ng-controller="appctrl">
+        <button type="button" class="btn btn-success center-block" ng-click="editMovie()">Add</button>
+        <br> 
+  
+    <table class="table table-striped">
+        <tr>
+          <th>ID</th>
+          <th>Name</th> 
+          <th>Category ID</th>
+          <th>Year</th>
+          <th>Amount earned</th>
+        </tr>
+        <tr ng-repeat="movie in movies">
+          <td>{{movie.id}}</td>
+          <td>{{movie.name}}</td>
+          <td>{{movie.category_id}}</td>
+          <td>{{movie.year}}</td>
+          <td>{{movie.amount_earned}}</td>
+          <td>
+              <button type="button" class="btn btn-danger" ng-click="confirmdelete(movie.id)">Delete</button>
+              <button type="button" class="btn btn-primary" ng-click="editMovie(movie.id)">Edit</button>                                           
+          </td>
+          </tr>
+
+      </table>
+  </div>
+
+    
+  </body>
+</html>
